@@ -46,3 +46,19 @@ bool validInput(char *str)
     }
     return true;
 }
+
+
+void reverse(int key, char *phrase)
+{
+    char crypt[20];
+    int len = strlen(phrase);
+
+    for(int i=0; i<len; i++)
+    {
+        if ((phrase[i] >= 65 && phrase[i] <= 90) || (phrase[i] >= 97 && phrase[i] <= 122))
+        {
+            /* code */
+        }
+        
+    }
+}
