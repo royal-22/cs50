@@ -20,8 +20,8 @@ int main(int argc, char **argv)
 
         int key = atoi(digits);
 
-        printf("%s", text);
-        //reverse(key, text);
+        printf("%s\n", text);
+        reverse(key, text);
     }
     else   
     {
@@ -55,10 +55,39 @@ void reverse(int key, char *phrase)
 
     for(int i=0; i<len; i++)
     {
-        if ((phrase[i] >= 65 && phrase[i] <= 90) || (phrase[i] >= 97 && phrase[i] <= 122))
+        if (phrase[i] >= 65 && phrase[i] <= 90)
         {
-            /* code */
+            char letter = phrase[i] + key; 
+
+            if (letter > 90)
+            {
+                letter -= 90;
+                letter += 65; 
+                crypt[i] = letter;
+            }
+
+            else
+                crypt[i] = letter;
+        }
+
+        else if (phrase[i] >= 97 && phrase[i] <= 122)
+        {
+            char letter = phrase[i] + key; 
+
+            if (letter > 122)
+            {
+                letter -= 122;
+                letter += 97; 
+                crypt[i] = letter;
+            }
+
+            else
+                crypt[i] = letter;
         }
         
+        else
+            crypt[i] = phrase[i];
     }
+
+    printf("%s", crypt);
 }
