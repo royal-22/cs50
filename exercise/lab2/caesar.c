@@ -55,24 +55,25 @@ void reverse(int key, char *phrase)
 
     for(int i=0; i<len; i++)
     {
+        char letter; 
+
         if (phrase[i] >= 65 && phrase[i] <= 90)
         {
-            char letter = phrase[i] + key; 
 
-            if (letter > 90)
+            crypt[i] = (phrase[i] - 65 + key) % 26 + 65;
+
+            /*if (letter > 90)
             {
                 letter -= 90;
                 letter += 65; 
                 crypt[i] = letter;
-            }
-
-            else
-                crypt[i] = letter;
+            } */
         }
 
         else if (phrase[i] >= 97 && phrase[i] <= 122)
         {
-            char letter = phrase[i] + key; 
+            crypt[i] = (phrase[i] - 97 + key) % 26 + 97;
+            /*char letter = phrase[i] + key; 
 
             if (letter > 122)
             {
@@ -82,7 +83,7 @@ void reverse(int key, char *phrase)
             }
 
             else
-                crypt[i] = letter;
+                crypt[i] = letter;*/
         }
         
         else
