@@ -25,9 +25,10 @@ int main(int argc, char **argv)
 
     for (int i=0; i < strlen(key); i++)
     {
-        tolower(key[i]);
+        key[i] = tolower(key[i]);
     }
 
+    printf("%s\n", key);
 
     if (argc == 2)
     {
