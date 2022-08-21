@@ -9,6 +9,9 @@
 
 int preferences[MAX_VOTERS][MAX_CANDIDATES];
 
+// preferences = { {1, 2, 3, 0}, {0, 2, 3, 1}, {0, 2, 1, 3}} 
+// voters are 3 | candidates are 4 and each number represents one candidate according to the array of candidates
+
 typedef struct 
 {
     char name[20];
