@@ -119,7 +119,7 @@ bool vote(int rank, char *name, int ranks[])
 // Update preferences given one voter's ranks
 void recordPreferences(int ranks[])
 {
-    for(int i=0; i<candidateCount-2; i++)
+    for(int i=0; i<candidateCount-1; i++)
     {
         for (int j=i+1; j<candidateCount; j++)
         {
@@ -162,7 +162,7 @@ void sortPairs(void)
     {
         for(int j=0; j<pairCount - i - 1; j++)
         {
-            if ((pairs[j].winner - pairs[j].loser) < (pairs[j+1].winner - pairs[j+1].loser))
+            if ((preferences[pairs[j].winner][pairs[j].loser]) < (preferences[pairs[j+1].winner][pairs[j+1].loser]))
             {
                 temp = pairs[j];
                 pairs[j] = pairs[j+1];
@@ -170,12 +170,35 @@ void sortPairs(void)
             }
         }
     }
+    return;
 }
 
 // Lock pairs into candidate graph in order, without creating cycles
 void lockPairs(void)
 {
-    return;
+    int firstWinner, cicle = 0;
+
+    for (int i=0; i<pairCount-1; i++)
+    {
+        firstWinner = pairs[0].winner;
+
+        if (pairs[i].loser == pairs[i+1].winner)
+        {
+            cicle ++;
+        }
+
+        locked[pairs[i].winner][pairs[i].loser] = true;
+    }
+
+    if (cicle == pairCount-1 || firstWinner == pairs[pairCount-1].loser)
+    {
+        return;
+    }
+    else
+    {
+        locked[pairs[pairCount-1].winner][pairs[pairCount-1].loser] = true;
+        return;
+    }
 }
 
 // Print the winner of the election
