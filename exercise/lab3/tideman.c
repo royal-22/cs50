@@ -164,14 +164,9 @@ void sortPairs(void)
         {
             if ((pairs[j].winner - pairs[j].loser) < (pairs[j+1].winner - pairs[j+1].loser))
             {
-                temp.winner = pairs[j].winner;
-                temp.loser = pairs[j].winner;
-
-                pairs[j].winner = pairs[j+1].winner;
-                pairs[j].loser = pairs[j+1].loser;
-                
-                pairs[j+1].winner = temp.winner;
-                pairs[j+1].loser = temp.loser;
+                temp = pairs[j];
+                pairs[j] = pairs[j+1];
+                pairs[j+1] = temp;
             }
         }
     }
