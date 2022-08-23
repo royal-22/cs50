@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdbool.h>
+#include <string.h>
 
 // Max number of candidates
 #define MAX 9
@@ -204,5 +205,24 @@ void lockPairs(void)
 // Print the winner of the election
 void printWinner(void)
 {
+    for (int i=0; i<pairCount; i++)
+    {
+        int count = 0;
+        for (int j=0; j<pairCount; j++)
+        {
+            if (locked[j][i])
+                break;
+
+            if (!locked[j][i])
+            {
+                count ++;
+                if (count == pairCount)
+                {
+                    printf("%s\n", candidates[i]);
+                    break;
+                }
+            }
+        }
+    }
     return;
 }
