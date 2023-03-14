@@ -1,0 +1,7 @@
+main inspo: http://v1.kaisermann.me/ 
+https://www.google.com/search?q=computer+and+keyboard+vector&tbm=isch&ved=2ahUKEwiInZmGtoT8AhWdN7kGHXb6AzUQ2-cCegQIABAA&oq=computer+and+keyboard+vector&gs_lcp=CgNpbWcQAzoECCMQJzoFCAAQgAQ6BggAEAcQHjoICAAQCBAHEB46BwgAEIAEEBNQ9QlYyjFgwzRoAnAAeACAAU-IAfoHkgECMTSYAQCgAQGqAQtnd3Mtd2l6LWltZ8ABAQ&sclient=img&ei=1a-fY8jeKZ3v5OUP9vSPqAM&bih=955&biw=1920&client=firefox-b-d#imgrc=yfYbfjJ-WDa5wM
+computer vector: https://www.google.com/search?q=desktop&tbm=isch&ved=2ahUKEwitu8WUuIT8AhV5J7kGHXkYCCwQ2-cCegQIABAA&oq=desktop&gs_lcp=CgNpbWcQAzIFCAAQgAQyBQgAEIAEMgUIABCABDIFCAAQgAQyBQgAEIAEMgUIABCABDIFCAAQgAQyBQgAEIAEMgUIABCABDIFCAAQgAQ6BAgjECc6BAgAEEM6CAgAEIAEELEDOggIABCxAxCDAToLCAAQgAQQsQMQgwE6BwgAEIAEEBNQ3BVYmDlgojtoAnAAeACAAWSIAd0FkgEDOS4xmAEAoAEBqgELZ3dzLXdpei1pbWfAAQE&sclient=img&ei=DLKfY62FJ_nO5OUP-bCg4AI&bih=955&biw=1920&client=firefox-b-d#imgrc=oe-j444lTcjA4M&imgdii=MjVJBhVe93SYGM
+https://developer.mozilla.org/en-US/docs/Web/CSS/::before
+https://kaisermann.me/
+
+fontAwesome: https://fontawesome.com/icons/rhombus?s=duotone&f=classic

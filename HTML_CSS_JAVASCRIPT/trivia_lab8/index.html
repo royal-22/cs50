@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+
+
+
+<html lang="en">
+
+    <head>
+
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+
+        <link href="styles.css" rel="stylesheet">
+
+        <title>Trivia!</title>
+
+        <script>
+
+            // TODO: Add code to check answers to questions
+            document.addEventListener('DOMContentLoaded', function listen(){      
+                
+                let btnElements = document.querySelectorAll(".button");
+                let submitBtnElement = document.querySelector("#comfirm-btn");
+                let multipleIsAnswered = false;
+                let freeIsAnswered = false;
+
+                for(let btnElement of btnElements){
+                    btnElement.addEventListener("click", event => multipleChoice(event));
+                }
+                submitBtnElement.addEventListener("click", freeResponse);
+
+                function multipleChoice(event) {
+                if (multipleIsAnswered)
+                {
+                    return;
+                }
+                const currentBtnElement = event.target;
+                if (currentBtnElement.classList.contains("correct"))
+                {
+                    currentBtnElement.style.background = "green";
+                    showText(true, currentBtnElement);
+                }
+                else
+                {
+                    currentBtnElement.style.background = "red";
+                    showText(false, currentBtnElement);
+                }
+                multipleIsAnswered = true;
+            }
+
+            function freeResponse()
+            {
+                if (freeIsAnswered)
+                {
+                    return;
+                }
+                let answerInputElement = document.querySelector("#country");
+                let answer = answerInputElement.value;
+                if (answer.toLowerCase() == "china")
+                {
+                    answerInputElement.style.background = "green";
+                    showText(true, answerInputElement);
+                }
+                else
+                {
+                    answerInputElement.style.background = "red"; 
+                    showText(false, answerInputElement);
+                }
+                freeIsAnswered = true;
+            }
+
+            function showText(value, element){
+                let newText = document.createElement("h4");
+                if(value)
+                {
+                    newText.textContent = "Correct";
+                }
+                else{
+                    newText.textContent = "Incorrect";
+                }
+                let divElement = element.parentElement;
+                divElement.appendChild(newText);
+            }
+            })
+
+        </script>
+
+    </head>
+
+    <body>
+
+        <div class="header">
+
+            <h1>Trivia!</h1>
+
+        </div>
+
+
+
+        <div class="container">
+
+            <div class="section">
+
+                <h2>Part 1: Multiple Choice </h2>
+
+                <hr>
+
+
+
+                <!-- TODO: Add multiple choice question here -->
+
+                <h3>Which number is not represented in Roman numbers?</h3>
+
+                <p id="define1"></p>
+
+                <!-- TODO: Add multiple choice question here -->
+
+                <button  class="button incorrect" type="button">One</button>
+
+                <button  class="button incorrect">Five</button>
+
+                <button  class="button correct">Zero</button>
+
+                <button  class="button incorrect">Twenty</button>
+
+
+
+            </div>
+
+
+
+            <div class="section">
+
+                <h2>Part 2: Free Response</h2>
+
+                <hr>
+
+                <h3>What's the most popolous country in the world?</h3>
+
+                <p id="answer"></p>
+
+                <!-- TODO: Add free response question here -->
+
+                <form class="second">
+
+                    <input autocomplete="off" type="text" placeholder="Country" id="country">
+
+                   <button id="comfirm-btn" type="button">Check answer</button>
+                   <p id="define2"></p>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </body>
+
+</html>
+ 
